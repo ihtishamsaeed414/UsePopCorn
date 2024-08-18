@@ -6,6 +6,8 @@ const average = (arr) =>
 
 const KEY = "f6f28c16";
 
+// Using Local storage for data storing
+
 export default function App() {
   const [query, setQuery] = useState("");
   // const [watched, setWatched] = useState([]);
@@ -18,8 +20,6 @@ export default function App() {
     const storeValue = localStorage.getItem("watched");
     return JSON.parse(storeValue);
   });
-  //different component at same position at tree -> state will be reserved
-  // although the compoenent in which state is changed will be rerendered
 
   function handleSelectMovie(id) {
     setSelectedId((selectedId) => (id === selectedId ? null : id));

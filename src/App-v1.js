@@ -97,7 +97,7 @@ export default function App() {
             throw new Error("Something went wrong with fetching movies");
           }
 
-          const data = await res.json(); //imp
+          const data = await res.json();
 
           if (data.Response === "False") throw new Error("Movie not found");
 
@@ -289,8 +289,6 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
   const [userRating, setUserRating] = useState("");
 
   const isWatched = watched.map((movie) => movie.imdbID).includes(selectedId);
-  console.log(isWatched);
-  console.log("selected id", selectedId);
 
   const watchedUserRating = watched.find(
     (movie) => movie.imdbID === selectedId
