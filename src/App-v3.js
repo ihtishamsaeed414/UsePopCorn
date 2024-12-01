@@ -16,7 +16,6 @@ export default function App() {
   const { movies, isLoading, error } = useMovies(query);
 
   const [watched, setWatched] = useLocalStorageState([], "watched");
-
   //different component at same position at tree -> state will be reserved
   // although the compoenent in which state is changed will be rerendered
 
@@ -220,7 +219,6 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
 
   const isWatched = watched.map((movie) => movie.imdbID).includes(selectedId);
   console.log(isWatched);
-  console.log("selected id", selectedId);
 
   const watchedUserRating = watched.find(
     (movie) => movie.imdbID === selectedId
